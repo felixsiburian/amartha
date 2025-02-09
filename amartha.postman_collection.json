@@ -1,0 +1,140 @@
+{
+	"info": {
+		"_postman_id": "1c5e162a-d45c-49a9-8db2-e327da622763",
+		"name": "amartha",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "4760244"
+	},
+	"item": [
+		{
+			"name": "create loan",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"customer_id\": 101,\n    \"total_amount\": 5000000\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/loan",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"loan"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get outstanding",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/loan/1/outstanding",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"loan",
+						"1",
+						"outstanding"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "make payment",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"amount\": 110000\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/loan/1/payment",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"loan",
+						"1",
+						"payment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delinquent payment",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/loan/1/delinquent",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"loan",
+						"1",
+						"delinquent"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get loan",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/loan/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"loan",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
